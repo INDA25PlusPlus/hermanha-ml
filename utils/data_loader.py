@@ -2,7 +2,7 @@ from mnist import MNIST
 import numpy as np
 
 
-def load_data(path: str = "./mnist") -> tuple[np.ndarray]:
+def load_data(path: str = "./mnist") -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
     """
     loads data and converts images to np arrays normalized between 0 and 1, and labels to one hot encodig, 
     meaning all labels are an ndarray of tuples with len 10, where a 1 on an index represent what number it is.
