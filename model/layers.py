@@ -17,15 +17,14 @@ class Dense:
         elif self.activation == "softmax":
             self.Y = softmax(self.Z)
         else:
-            raise Exception("activation function not allowed")
+            raise Exception("unsupported activation")
         return self.Y
     
     def backward(self, dA, learning_rate):
         if self.activation == "sigmoid":
             dZ = dA * self.Y * (1-self.Y)
         elif self.activation == "softmax":
-            # TODO
-            pass
+            dZ = dA
         else: 
             raise Exception("unsupported activation")
         
