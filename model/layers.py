@@ -40,3 +40,12 @@ class Dense:
         self.b -= learning_rate * dB
 
         return dX
+    
+    def save(self, path):
+        np.savez(path, W=self.W, b=self.b)
+
+    def load(self, path):
+        data = np.load(path)
+        self.W = data["W"]
+        self.b = data["b"]
+        data.close()
